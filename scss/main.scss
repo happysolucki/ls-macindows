@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url(../assets/fonts/dm-sans-v6-latin-500.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "weather";
+  src: url(./../assets/fonts/weathericons.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "DM Sans";
+  font-size: 0.6875rem;
+  box-sizing: border-box;
+  color: var(--color);
+}
+
+* {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.statusbar {
+  width: 90%;
+  min-height: 5%;
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em;
+  background-color: var(--bgcolor);
+  color: var(--color);
+  border: 2.5px solid hsl(0, 0%, 0%);
+  border-radius: 5px;
+  box-shadow: hsla(0, 0%, 0%, 0.15) 2.95px 2.95px;
+  transform: translateX(-50%);
+
+  &__entry:first-of-type {
+    font-family: "weather", "DM Sans";
+  }
+}
+
+.music {
+  width: 70%;
+  height: 24%;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bgcolor);
+  color: var(--color);
+  border: 2.5px solid hsl(0, 0%, 0%);
+  border-radius: 5px;
+  box-shadow: hsla(0, 0%, 0%, 0.15) 2.95px 2.95px;
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  transition: 250ms;
+  transition-property: transform, opacity, visibility;
+  visibility: hidden;
+  opacity: 0;
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &--collapsed {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgcolor);
+    border: 2.5px solid hsl(0, 0%, 0%);
+    border-radius: 5px;
+    box-shadow: hsla(0, 0%, 0%, 0.15) 2.95px 2.95px;
+  }
+
+  &__header {
+    min-height: 15%;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2.5px solid hsl(0, 0%, 0%);
+  }
+
+  &__macos {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2.5px solid hsl(0, 0%, 0%);
+
+    &--min {
+      background-color: hsl(122, 100%, 81%);
+    }
+
+    &--max {
+      background-color: hsl(51, 100%, 81%);
+    }
+
+    &--close {
+      background-color: hsl(0, 100%, 81%);
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.5em 1em;
+  }
+
+  &__artwork {
+    width: 60px;
+    height: 60px;
+    background: center / cover no-repeat;
+    border-radius: 5px;
+    box-shadow: hsla(0, 0%, 0%, 0.15) 2.95px 2.95px;
+  }
+
+  &__info {
+    max-height: 40px;
+  }
+
+  &__details {
+    max-width: 65%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &--track {
+      color: hsl(249, 5%, 54%);
+    }
+  }
+
+  &__footer {
+    min-height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2.5px solid hsl(0, 0%, 0%);
+
+    & > button {
+     height: 25px;
+     width: 25px;
+    }
+  }
+}
+
+.previous,
+.forward,
+.paused {
+  fill: hsl(249, 5%, 54%);
+}
+.controls {
+  width: 13px;
+  height: 13px;
+}
+
+@media only screen and(min-device-width:375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .music {
+    height: 27%;
+  }
+  .music__body {
+    padding: 0.25em 1em;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .theme {
+    --bgcolor: hsl(42, 56%, 93%);
+    --color: hsl(0, 0%, 0%);
+  }
+  .previous,
+  .forward,
+  .paused {
+    fill: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme {
+    --bgcolor: hsl(30, 9%, 14%);
+    --color: hsl(0, 0%, 100%);
+  }
+  .hpo {
+    fill: white;
+  }
+  .hp {
+    stroke: white;
+  }
+}

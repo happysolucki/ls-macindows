@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="emulation.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>LS | Macindows</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="theme">
+    <div class="statusbar">
+      <div id="weather" class="statusbar__entry"></div>
+      <div id="time" class="statusbar__entry"></div>
+    </div>
+    <button id="collapsed" class="music--collapsed">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="hpo" d="M22 18.432C22 19.8503 20.8764 21 19.4903 21C19.176 21 18.8632 20.9556 18.5607 20.868L18.2698 20.7837C16.8981 20.3864 15.8616 19.2331 15.5896 17.8012C15.4203 16.9103 15.4203 15.9944 15.5896 15.1035C15.8616 13.6716 16.8981 12.5182 18.2698 12.121L18.5607 12.0367C18.8632 11.9491 19.176 11.9047 19.4903 11.9047C20.8764 11.9047 22 13.0544 22 14.4727V18.432Z" fill="black" fill-opacity="0.15"/>
+        <path class="hpo" d="M2.00001 18.432C2 19.8503 3.12362 21 4.50968 21C4.824 21 5.13681 20.9556 5.43924 20.868L5.7302 20.7837C7.10192 20.3864 8.13837 19.2331 8.41041 17.8012C8.57966 16.9103 8.57966 15.9944 8.41041 15.1035C8.13837 13.6716 7.10192 12.5182 5.7302 12.121L5.43924 12.0367C5.13681 11.9491 4.824 11.9047 4.50968 11.9047C3.12362 11.9047 2 13.0544 2.00001 14.4727L2.00001 18.432Z" fill="black" fill-opacity="0.15"/>
+        <path class="hp" d="M2 17.0208L2 13.0416L2.02437 12.6779C2.33804 7.99852 5.67197 4.11197 10.1659 3.1869C11.3765 2.9377 12.6235 2.9377 13.8341 3.1869C18.328 4.11197 21.662 7.99852 21.9756 12.6779L22 13.0416V17.0208M15.5896 17.8012C15.4203 16.9103 15.4203 15.9944 15.5896 15.1035C15.8616 13.6716 16.8981 12.5182 18.2698 12.121L18.5607 12.0367C18.8632 11.9491 19.176 11.9047 19.4903 11.9047C20.8764 11.9047 22 13.0544 22 14.4727V18.432C22 19.8503 20.8764 21 19.4903 21C19.176 21 18.8632 20.9556 18.5607 20.868L18.2698 20.7837C16.8981 20.3864 15.8616 19.2331 15.5896 17.8012ZM8.41041 17.8012C8.57966 16.9103 8.57966 15.9944 8.41041 15.1035C8.13837 13.6716 7.10192 12.5182 5.7302 12.121L5.43924 12.0367C5.13681 11.9491 4.824 11.9047 4.50968 11.9047C3.12362 11.9047 2 13.0544 2.00001 14.4727L2.00001 18.432C2 19.8503 3.12362 21 4.50968 21C4.824 21 5.13681 20.9556 5.43924 20.868L5.7302 20.7837C7.10192 20.3864 8.13837 19.2331 8.41041 17.8012Z" stroke="black" stroke-width="1.5"/>
+        </svg>
+    </button>
+    <div class="music">
+      <div class="music__header">
+        <div class="music__details"></div>
+        <button class="music__macos">
+          <span class="music__dot music__dot--min"></span>
+          <span class="music__dot music__dot--max"></span>
+          <span class="music__dot music__dot--close"></span>
+        </button>
+      </div>
+      <div class="music__body">
+        <div class="music__artwork"></div>
+        <div class="music__info">
+          <div class="music__details music__details--track"></div>
+          <div class="music__details"></div>
+          <div class="music__details"></div>
+        </div>
+      </div>
+      <div class="music__footer">
+        <button id="prev">
+          <svg
+            class="controls"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="previous"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4 8.00057C4.00016 8.77888 4.3324 9.55711 4.99672 10.0509L12.4092 15.56C13.9313 16.6913 16 15.5098 16 13.5092V2.49084C16 0.490162 13.9313 -0.691334 12.4092 0.439984L4.99672 5.94915C4.3324 6.44289 4.00016 7.22113 4 7.99943V2C4 0.895431 3.10457 4.29078e-09 2 4.29078e-09C0.895431 4.29078e-09 0 0.895431 0 2V14C0 15.1046 0.895431 16 2 16C3.10457 16 4 15.1046 4 14V8.00057Z"
+              fill="#CDC8C4"
+            />
+          </svg>
+          <!-- <object
+            type="image/svg+xml"
+            class="music__controls prev"
+            data="./assets/media/prev.svg"
+            href="./css/main.css"
+          ></object> -->
+        </button>
+        <!-- <button id="prev" class="music__controls prev"></button> -->
+        <button id="pause">
+          <svg
+            class="controls"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="paused"
+              d="M14.671 10.0509C16.443 9.06313 16.443 6.93687 14.671 5.94915L4.78777 0.439984C2.75822 -0.691334 3.37338e-07 0.490162 2.29776e-07 2.49084V13.5092C1.22213e-07 15.5098 2.75822 16.6913 4.78777 15.56L14.671 10.0509Z"
+              fill="#CDC8C4"
+            />
+          </svg>
+          <!-- <object
+            type="image/svg+xml"
+            class="music__controls pause"
+            data="./assets/media/play.svg"
+            href="./css/main.css"
+          ></object> -->
+        </button>
+        <button id="next">
+          <svg
+            class="controls"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="forward"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M14 0C15.1046 0 16 0.895431 16 2V14C16 15.1046 15.1046 16 14 16C12.8954 16 12 15.1046 12 14V8.00057C11.9998 8.77888 11.6676 9.55711 11.0033 10.0509L3.59083 15.56C2.06867 16.6913 0 15.5098 0 13.5092V2.49084C0 0.490162 2.06866 -0.691334 3.59083 0.439984L11.0033 5.94915C11.6676 6.44289 11.9998 7.22113 12 7.99943V2C12 0.895431 12.8954 0 14 0Z"
+              fill="#CDC8C4"
+            />
+          </svg>
+          <!-- <object
+            type="image/svg+xml"
+            id="next"
+            class="music__controls next"
+            data="./assets/media/next.svg"
+            href="./css/main.css"
+          ></object> -->
+        </button>
+      </div>
+    </div>
+    <script src="./js/lib/localization.js"></script>
+    <script src="./js/lib/time.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

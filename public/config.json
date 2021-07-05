@@ -1,0 +1,52 @@
+{
+  "name": "LS | Macindows",
+  "author": "Reprise (HSL)",
+  "options": [
+    {
+      "type": "title",
+      "text": "Preferences"
+    },
+    {
+      "type": "text",
+      "text": "Username",
+      "default": "User",
+      "key": "username",
+      "placeholder": "User",
+      "mode": "short"
+    },
+    {
+      "type": "switch",
+      "text": "System font",
+      "default": false,
+      "key": "isSystemFontEnabled"
+    },
+    {
+      "type": "comment",
+      "text": "Enabling this option will make the widget use your system/snowboard font (depends on what jb you use)."
+    },
+    {
+      "type": "gap"
+    },
+    {
+      "type": "title",
+      "text": "Contributors"
+    },
+    {
+      "type": "link",
+      "text": "Reprise (HSL)",
+      "url": "https://twitter.com/Reprise_SW"
+    },
+    {
+      "type": "gap"
+    },
+    {
+      "type": "title",
+      "text": "Inspiration"
+    },
+    {
+      "type": "link",
+      "text": "Macwindows by Niivu",
+      "url": "https://www.deviantart.com/niivu/art/Macindows-870073866"
+    }
+  ]
+}
